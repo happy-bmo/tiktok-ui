@@ -12,6 +12,7 @@ const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
+    // Lưu trữ array items trong menu
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -38,6 +39,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         <Tippy
             interactive
             placement="bottom-end"
+            offset={[12, 8]}
             delay={[0, 800]}
             render={(attributes) => (
                 <div className={cx('menu-items')} tabIndex="-1" {...attributes}>
@@ -54,6 +56,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                     </PopperWrapper>
                 </div>
             )}
+            onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>
