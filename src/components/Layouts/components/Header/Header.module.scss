@@ -3,11 +3,17 @@
     --search-height: 46px;
     --search-top-spacer: 9px;
     --search-button-width: 52px;
-    width: 100%;
-    height: var(--default-layout-header-height, 60px);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--default-layout-header-height);
+    background: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    z-index: 99;
 }
 
 .inner {
@@ -17,6 +23,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--default-layout-horizontal-space);
+}
+
+// Logo
+.logo-link {
+    display: flex;
 }
 
 .login-text {
