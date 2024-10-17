@@ -16,13 +16,13 @@ import {
 import styles from './Header.module.scss';
 import 'tippy.js/dist/tippy.css';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Button from '~/components/Button';
 import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
 import { UploadIcon } from '~/components/Icon';
 import Image from '~/components/Image';
-import Search from '../Search';
+import Search from '~/layouts/components/Search';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -30,7 +30,7 @@ const MENU_ITEMS = [
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'Vietnamese',
         children: {
-            title: 'language',
+            title: 'Language',
             data: [
                 { type: 'language', code: 'en', title: 'English' },
                 { type: 'language', code: 'vi', title: 'Tiếng Việt' },
@@ -63,7 +63,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <Image src={images.logo} alt="Tiktok Logo" />
                 </Link>
                 <Search />
