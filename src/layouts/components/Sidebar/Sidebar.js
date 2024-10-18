@@ -10,6 +10,7 @@ import {
     UserGroupIconActive,
     LiveIconActive,
 } from '~/components/Icon';
+import SuggestAccounts from '~/components/SuggestAccount';
 
 const cx = classNames.bind(styles);
 
@@ -36,6 +37,9 @@ function Sidebar() {
                     activeIcon={<LiveIconActive />}
                 ></MenuItem>
             </Menu>
+            {/* SuggestAccount */}
+            <SuggestAccounts label="Suggest accounts" />
+            {/* <SuggestAccounts label="Following" /> */}
         </aside>
     );
 }
